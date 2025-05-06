@@ -24,12 +24,10 @@ RUN groupadd --gid $USER_GID $USERNAME \
 # Copy dotfiles from the cloned repository
 COPY .devcontainer/dotfiles/.gitconfig /home/$USERNAME/.gitconfig
 COPY .devcontainer/dotfiles/.bashrc /home/$USERNAME/.bashrc
+# Remove carriage returns (CR) from the .bashrc file
+RUN sed -i 's/\r$//' /home/$USERNAME/.bashrc
+# Set ownership
 RUN chown -R $USERNAME:$USERNAME /home/$USERNAME
-
-# Cleanup temp dotfiles
-RUN echo "running stuff in Dockerfile, about to try to remove dotfiles"
-RUN rm -rf .devcontainer/dotfiles
-RUN echo "running stuff in Dockerfile, attempted to remove dotfiles"
 
 # Set bash as default shell
 SHELL ["/bin/bash", "-c"]
