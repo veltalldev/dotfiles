@@ -2,7 +2,7 @@
     name = Velt Krapfenwald
     email = veltalldev@gmail.com
 [safe]
-    directory = /workspace
+    directory = /workspaces
 [core]
     editor = nano
     autocrlf = input
