@@ -26,6 +26,9 @@ COPY .devcontainer/dotfiles/.gitconfig /home/$USERNAME/.gitconfig
 COPY .devcontainer/dotfiles/.bashrc /home/$USERNAME/.bashrc
 RUN chown -R $USERNAME:$USERNAME /home/$USERNAME
 
+# Cleanup temp dotfiles
+RUN rm -rf .devcontainer/dotfiles
+
 # Set bash as default shell
 SHELL ["/bin/bash", "-c"]
 ENV SHELL=/bin/bash
