@@ -27,7 +27,11 @@ COPY .devcontainer/dotfiles/.bashrc /home/$USERNAME/.bashrc
 RUN chown -R $USERNAME:$USERNAME /home/$USERNAME
 
 # Cleanup temp dotfiles
+RUN echo "running stuff in Dockerfile, about to try to remove dotfiles"
+RUN ls .devcontainer
 RUN rm -rf .devcontainer/dotfiles
+RUN echo "running stuff in Dockerfile, attempted to remove dotfiles"
+RUN ls .devcontainer
 
 # Set bash as default shell
 SHELL ["/bin/bash", "-c"]
