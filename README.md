@@ -11,7 +11,6 @@ This repository contains my preferred configuration files and setup scripts for 
 - `.gitconfig` - Git configuration with sensible defaults and my personal identity
 - `.bashrc` - Bash shell customizations and aliases
 - `setup-devcontainer.sh` - Script to set up a new project with these configurations
-- `setup-devcontainer.bat` - Same setup script for Windows environment
 - `templates/` - Template files for Dev Containers
 
 ## How to Use
@@ -24,8 +23,6 @@ To set up a new project with these configurations:
 # Run from the root of any new project
 curl -s https://raw.githubusercontent.com/veltalldev/dotfiles/main/setup-devcontainer.sh | bash
 ```
-
-OR clone and run `setup-devcontainer.bat` on Windows. Make sure Git is installed and available in your Windows PATH.
 
 ### Manual Setup
 
