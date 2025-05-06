@@ -1,0 +1,12 @@
+[user]
+    name = Velt Krapfenwald
+    email = veltalldev@gmail.com
+[safe]
+    directory = /workspace
+[core]
+    editor = nano
+    autocrlf = input
+[color]
+    ui = auto
+[pull]
+    rebase = false
