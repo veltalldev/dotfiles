@@ -23,10 +23,8 @@ RUN groupadd --gid $USER_GID $USERNAME \
 
 # Copy dotfiles from the cloned repository
 COPY .devcontainer/dotfiles/.gitconfig /home/$USERNAME/.gitconfig
-COPY .devcontainer/dotfiles/.bashrc /home/$USERNAME/.bashrc_additions
-RUN cat /home/$USERNAME/.bashrc_additions >> /home/$USERNAME/.bashrc && \
-    rm /home/$USERNAME/.bashrc_additions && \
-    chown -R $USERNAME:$USERNAME /home/$USERNAME
+COPY .devcontainer/dotfiles/.bashrc /home/$USERNAME/.bashrc
+RUN chown -R $USERNAME:$USERNAME /home/$USERNAME
 
 # Set bash as default shell
 SHELL ["/bin/bash", "-c"]
