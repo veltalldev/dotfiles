@@ -16,7 +16,7 @@ fi
 # Copy templates
 cp .devcontainer/dotfiles/templates/Dockerfile .devcontainer/
 cp .devcontainer/dotfiles/templates/devcontainer.json .devcontainer/
-cp .devcontainer/dotfiles/templates/devcontainer.json .
+cp .devcontainer/dotfiles/templates/requirements.txt .
 
 echo "DevContainer setup complete."
 echo "You can now open this folder in VS Code and use 'Reopen in Container'."
