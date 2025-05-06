@@ -24,6 +24,7 @@ RUN groupadd --gid $USER_GID $USERNAME \
 # Copy dotfiles from the cloned repository
 COPY .devcontainer/dotfiles/.gitconfig /home/$USERNAME/.gitconfig
 COPY .devcontainer/dotfiles/.bashrc /home/$USERNAME/.bashrc
+RUN rm -rf .devcontainer/dotfiles
 # Remove carriage returns (CR) from the .bashrc file
 RUN sed -i 's/\r$//' /home/$USERNAME/.bashrc
 # Set ownership
