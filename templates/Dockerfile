@@ -22,8 +22,8 @@ RUN groupadd --gid $USER_GID $USERNAME \
     && chmod 0440 /etc/sudoers.d/$USERNAME
 
 # Copy dotfiles from the cloned repository
-COPY dotfiles/.gitconfig /home/$USERNAME/.gitconfig
-COPY dotfiles/.bashrc /home/$USERNAME/.bashrc_additions
+COPY .devcontainer/dotfiles/.gitconfig /home/$USERNAME/.gitconfig
+COPY .devcontainer/dotfiles/.bashrc /home/$USERNAME/.bashrc_additions
 RUN cat /home/$USERNAME/.bashrc_additions >> /home/$USERNAME/.bashrc && \
     rm /home/$USERNAME/.bashrc_additions && \
     chown -R $USERNAME:$USERNAME /home/$USERNAME
